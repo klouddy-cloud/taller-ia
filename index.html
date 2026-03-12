@@ -1,173 +1,182 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IA para empresarios de verdad — Taller gratuito 14-15 abril</title>
-<meta name="description" content="Taller gratuito de IA para empresarios. 14 y 15 de abril. Aprende a multiplicarte por 10, trabajar menos y facturar más.">
+<title>Taller IA para Empresarios — 14 y 15 de abril 2026</title>
+<meta name="description" content="El taller de IA gratuito donde los empresarios aprenden lo que de verdad importa. 14 y 15 de abril 2026. Online y gratis.">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script>
 tailwind.config = {
   theme: {
     extend: {
-      colors: {
-        gold: '#C9A84C',
-        'gold-light': '#E8D48B',
-        'gold-dark': '#A07D2E',
-        surface: '#0A0A0A',
-        'surface-2': '#141414',
-        'surface-3': '#1E1E1E',
-        accent: '#C9A84C',
-      },
-      fontFamily: {
-        display: ['"Instrument Serif"', 'serif'],
-        body: ['"Space Grotesk"', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
-      }
+      fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+      colors: { accent: '#2563eb', 'accent-dark': '#1d4ed8', 'accent-light': '#eff6ff' }
     }
   }
 }
 </script>
 <style>
-  ::selection { background: #C9A84C33; color: #fff; }
-  html { background: #0A0A0A; }
-  .gradient-text {
-    background: linear-gradient(135deg, #E8D48B 0%, #C9A84C 50%, #A07D2E 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .gold-border { border-image: linear-gradient(135deg, #C9A84C, #E8D48B, #C9A84C) 1; }
-  .glow { box-shadow: 0 0 60px rgba(201,168,76,0.15); }
-  .line-accent { background: linear-gradient(90deg, #C9A84C, transparent); height: 1px; }
-  @keyframes pulse-slow { 0%,100% { opacity: 1; } 50% { opacity: .7; } }
-  .pulse-slow { animation: pulse-slow 2s ease-in-out infinite; }
-  input:focus { outline: none; box-shadow: 0 0 0 2px #C9A84C44; }
-  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-  .faq-item.open .faq-answer { max-height: 500px; }
-  .faq-item.open .faq-chevron { transform: rotate(180deg); }
-  .faq-chevron { transition: transform 0.3s ease; }
+  html { scroll-behavior: smooth; }
+  .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .faq-item.open .faq-content { max-height: 500px; }
+  .faq-item.open .faq-icon { transform: rotate(45deg); }
+  .faq-icon { transition: transform 0.3s ease; }
 </style>
 </head>
-<body class="bg-surface text-white font-body antialiased">
+<body class="bg-white text-gray-900 font-sans antialiased">
 
 <!-- Nav -->
-<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-white/5">
-  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-    <span class="font-display text-xl text-gold">Taller IA</span>
-    <a href="#registro" class="hidden sm:inline-flex items-center gap-2 px-5 py-2 bg-gold text-surface font-semibold text-sm rounded hover:bg-gold-light transition-colors cursor-pointer">
-      Reserva tu plaza gratis
-    </a>
+<nav class="fixed top-0 w-full bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <span class="text-lg font-extrabold tracking-tight">Taller IA</span>
+    <a href="#registro" class="cursor-pointer bg-accent text-white text-sm font-bold px-5 py-2.5 rounded-lg hover:bg-accent-dark transition">Reserva tu plaza</a>
   </div>
 </nav>
 
 <!-- Hero -->
-<section class="relative min-h-screen flex items-center pt-16">
-  <div class="absolute inset-0 overflow-hidden">
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gold/[0.03] rounded-full blur-3xl"></div>
-  </div>
-  <div class="relative max-w-5xl mx-auto px-6 py-24 md:py-32">
-    <div class="flex flex-col items-center text-center">
-      <div class="inline-flex items-center gap-2 px-4 py-1.5 border border-gold/30 rounded-full mb-8">
-        <span class="w-2 h-2 rounded-full bg-gold pulse-slow"></span>
-        <span class="text-gold text-sm font-mono tracking-wide">14 — 15 ABRIL 2026 · ONLINE · GRATUITO</span>
-      </div>
-      <h1 class="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight mb-8">
-        IA para empresarios<br><span class="gradient-text">de verdad</span>
-      </h1>
-      <p class="max-w-2xl text-lg md:text-xl text-white/60 leading-relaxed mb-12">
-        Multiplícate por 10. Trabaja menos. Factura más. El taller de IA gratuito donde los empresarios aprenden lo que de verdad importa — sin perder el tiempo con cosas genéricas
-      </p>
-      <a href="#registro" class="group inline-flex items-center gap-3 px-8 py-4 bg-gold text-surface font-bold text-lg rounded hover:bg-gold-light transition-all cursor-pointer hover:scale-[1.02] active:scale-[0.98]">
-        Reserva tu plaza gratis
-        <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-      </a>
-      <p class="mt-4 text-white/30 text-sm font-mono">Plazas limitadas — Webinar en directo</p>
+<section class="pt-32 pb-20 md:pt-44 md:pb-28 px-6">
+  <div class="max-w-4xl mx-auto text-center">
+    <div class="flex flex-wrap justify-center gap-3 mb-8">
+      <span class="inline-flex items-center gap-2 bg-gray-100 text-gray-700 text-sm font-semibold px-4 py-2 rounded-full">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        14 y 15 de abril 2026
+      </span>
+      <span class="inline-flex items-center gap-2 bg-gray-100 text-gray-700 text-sm font-semibold px-4 py-2 rounded-full">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>
+        100% Online
+      </span>
+      <span class="inline-flex items-center gap-2 bg-accent-light text-accent text-sm font-bold px-4 py-2 rounded-full">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+        Gratis
+      </span>
+    </div>
+    <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.95] mb-6">IA para empresarios<br>de verdad</h1>
+    <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">Multiplícate por 10. Trabaja menos. Factura más. El taller de IA gratuito donde los empresarios aprenden lo que de verdad importa — sin perder el tiempo con cosas genéricas</p>
+    <a href="#registro" class="cursor-pointer inline-flex items-center gap-2 bg-accent text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-accent-dark transition shadow-lg shadow-accent/20">
+      Reserva tu plaza gratis
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <!-- Countdown -->
+    <div class="mt-12 flex justify-center gap-4 md:gap-6" id="countdown">
+      <div class="text-center"><span class="block text-3xl md:text-5xl font-black text-gray-900" id="cd-days">--</span><span class="text-xs md:text-sm text-gray-500 font-medium">días</span></div>
+      <span class="text-3xl md:text-5xl font-light text-gray-300">:</span>
+      <div class="text-center"><span class="block text-3xl md:text-5xl font-black text-gray-900" id="cd-hours">--</span><span class="text-xs md:text-sm text-gray-500 font-medium">horas</span></div>
+      <span class="text-3xl md:text-5xl font-light text-gray-300">:</span>
+      <div class="text-center"><span class="block text-3xl md:text-5xl font-black text-gray-900" id="cd-mins">--</span><span class="text-xs md:text-sm text-gray-500 font-medium">min</span></div>
+      <span class="text-3xl md:text-5xl font-light text-gray-300">:</span>
+      <div class="text-center"><span class="block text-3xl md:text-5xl font-black text-gray-900" id="cd-secs">--</span><span class="text-xs md:text-sm text-gray-500 font-medium">seg</span></div>
     </div>
   </div>
 </section>
 
-<!-- Countdown -->
-<section class="py-16 border-y border-white/5">
-  <div class="max-w-4xl mx-auto px-6">
-    <p class="text-center text-white/40 text-sm font-mono tracking-widest uppercase mb-8">El taller empieza en</p>
-    <div id="countdown" class="flex justify-center gap-4 sm:gap-8">
-      <div class="flex flex-col items-center">
-        <span id="cd-days" class="text-4xl sm:text-6xl font-display gradient-text">--</span>
-        <span class="text-white/30 text-xs font-mono mt-2 tracking-widest">DÍAS</span>
-      </div>
-      <span class="text-4xl sm:text-6xl text-white/10 font-display">:</span>
-      <div class="flex flex-col items-center">
-        <span id="cd-hours" class="text-4xl sm:text-6xl font-display gradient-text">--</span>
-        <span class="text-white/30 text-xs font-mono mt-2 tracking-widest">HORAS</span>
-      </div>
-      <span class="text-4xl sm:text-6xl text-white/10 font-display">:</span>
-      <div class="flex flex-col items-center">
-        <span id="cd-mins" class="text-4xl sm:text-6xl font-display gradient-text">--</span>
-        <span class="text-white/30 text-xs font-mono mt-2 tracking-widest">MIN</span>
-      </div>
-      <span class="text-4xl sm:text-6xl text-white/10 font-display">:</span>
-      <div class="flex flex-col items-center">
-        <span id="cd-secs" class="text-4xl sm:text-6xl font-display gradient-text">--</span>
-        <span class="text-white/30 text-xs font-mono mt-2 tracking-widest">SEG</span>
-      </div>
+<!-- Stats -->
+<section class="py-16 bg-gray-50">
+  <div class="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <div>
+      <span class="block text-4xl md:text-5xl font-black text-accent">+200</span>
+      <span class="text-sm text-gray-600 font-medium mt-1 block">Herramientas de IA analizadas</span>
+    </div>
+    <div>
+      <span class="block text-4xl md:text-5xl font-black text-gray-900">2</span>
+      <span class="text-sm text-gray-600 font-medium mt-1 block">Días intensivos</span>
+    </div>
+    <div>
+      <span class="block text-4xl md:text-5xl font-black text-gray-900">100%</span>
+      <span class="text-sm text-gray-600 font-medium mt-1 block">Práctico y aplicable</span>
+    </div>
+    <div>
+      <span class="block text-4xl md:text-5xl font-black text-accent">0€</span>
+      <span class="text-sm text-gray-600 font-medium mt-1 block">Totalmente gratis</span>
     </div>
   </div>
 </section>
 
-<!-- Qué vas a aprender -->
-<section class="py-24 md:py-32">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="mb-16">
-      <p class="text-gold text-sm font-mono tracking-widest uppercase mb-4">Programa</p>
-      <h2 class="font-display text-4xl md:text-6xl">Qué vas a aprender<br>en <span class="gradient-text">2 días</span></h2>
+<!-- Por qué este taller -->
+<section class="py-20 md:py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="max-w-3xl">
+      <p class="text-accent font-bold text-sm tracking-wide uppercase mb-4">Por qué este taller</p>
+      <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-6">No es otro curso genérico de IA</h2>
+      <p class="text-lg text-gray-600 leading-relaxed mb-10">La mayoría de formaciones de IA te enseñan a escribir prompts bonitos o te muestran demos impresionantes que luego no sabes aplicar. Este taller es diferente: está diseñado por empresarios, para empresarios.</p>
     </div>
-    <div class="grid md:grid-cols-2 gap-6">
-      <!-- Día 1 -->
-      <div class="bg-surface-2 border border-white/5 rounded-lg p-8 hover:border-gold/20 transition-colors">
-        <div class="flex items-center gap-3 mb-6">
-          <span class="font-mono text-gold text-sm tracking-widest">DÍA 01</span>
-          <div class="line-accent flex-1"></div>
-          <span class="text-white/30 text-sm">Martes 14 abril</span>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white border border-gray-200 rounded-2xl p-8">
+        <div class="w-12 h-12 bg-accent-light rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
         </div>
-        <h3 class="font-display text-2xl mb-4">El potencial real de la IA</h3>
-        <ul class="space-y-3">
-          <li class="flex items-start gap-3 text-white/60">
-            <svg class="w-5 h-5 text-gold mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10" stroke-width="1.5"/></svg>
-            Las herramientas que están cambiando las reglas del juego
+        <h3 class="text-lg font-bold mb-2">Resultados reales, no teoría</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Cada herramienta y estrategia que verás ya está generando resultados en negocios reales. Sin relleno.</p>
+      </div>
+      <div class="bg-white border border-gray-200 rounded-2xl p-8">
+        <div class="w-12 h-12 bg-accent-light rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Por empresarios, para empresarios</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">No lo imparte un profesor de universidad. Lo dan dos emprendedores que usan IA cada día para facturar más.</p>
+      </div>
+      <div class="bg-white border border-gray-200 rounded-2xl p-8">
+        <div class="w-12 h-12 bg-accent-light rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Ahorra meses de prueba y error</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">En 2 días vas a aprender lo que a nosotros nos costó meses descubrir. El atajo que necesitas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Programa -->
+<section class="py-20 md:py-28 px-6 bg-gray-50" id="programa">
+  <div class="max-w-5xl mx-auto">
+    <p class="text-accent font-bold text-sm tracking-wide uppercase mb-4">Programa</p>
+    <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-12">Qué vas a aprender</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- Día 1 -->
+      <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10">
+        <span class="inline-block bg-accent text-white text-xs font-bold px-3 py-1 rounded-full mb-5">Día 1 — Martes 14 abril</span>
+        <h3 class="text-2xl font-extrabold mb-6">Fundamentos y estrategia</h3>
+        <ul class="space-y-4">
+          <li class="flex gap-3">
+            <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+            <div><span class="font-semibold">El potencial real de la IA</span><p class="text-sm text-gray-500 mt-0.5">Qué puede hacer hoy (de verdad) y qué no. Sin humo.</p></div>
           </li>
-          <li class="flex items-start gap-3 text-white/60">
-            <svg class="w-5 h-5 text-gold mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10" stroke-width="1.5"/></svg>
-            Prompting avanzado: cómo hablarle a la IA para obtener resultados reales
+          <li class="flex gap-3">
+            <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+            <div><span class="font-semibold">Herramientas que cambian las reglas</span><p class="text-sm text-gray-500 mt-0.5">Las herramientas clave que todo empresario debería conocer y usar ya.</p></div>
           </li>
-          <li class="flex items-start gap-3 text-white/60">
-            <svg class="w-5 h-5 text-gold mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10" stroke-width="1.5"/></svg>
-            Qué automatizar primero en tu empresa para ganar tiempo ya
+          <li class="flex gap-3">
+            <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+            <div><span class="font-semibold">El arte del prompting</span><p class="text-sm text-gray-500 mt-0.5">Cómo hablarle a la IA para obtener resultados de nivel profesional.</p></div>
+          </li>
+          <li class="flex gap-3">
+            <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+            <div><span class="font-semibold">Cómo saber qué automatizar</span><p class="text-sm text-gray-500 mt-0.5">Framework para identificar qué tareas de tu negocio deberías delegar a la IA.</p></div>
           </li>
         </ul>
       </div>
       <!-- Día 2 -->
-      <div class="bg-surface-2 border border-white/5 rounded-lg p-8 hover:border-gold/20 transition-colors">
-        <div class="flex items-center gap-3 mb-6">
-          <span class="font-mono text-gold text-sm tracking-widest">DÍA 02</span>
-          <div class="line-accent flex-1"></div>
-          <span class="text-white/30 text-sm">Miércoles 15 abril</span>
-        </div>
-        <h3 class="font-display text-2xl mb-4">Casos reales y aplicación</h3>
-        <ul class="space-y-3">
-          <li class="flex items-start gap-3 text-white/60">
-            <svg class="w-5 h-5 text-gold mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10" stroke-width="1.5"/></svg>
-            Casos de éxito: José Elías y Eric Ponce con IA en sus negocios
+      <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10">
+        <span class="inline-block bg-gray-900 text-white text-xs font-bold px-3 py-1 rounded-full mb-5">Día 2 — Miércoles 15 abril</span>
+        <h3 class="text-2xl font-extrabold mb-6">Casos reales y aplicación</h3>
+        <ul class="space-y-4">
+          <li class="flex gap-3">
+            <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+            <div><span class="font-semibold">Caso José Elías</span><p class="text-sm text-gray-500 mt-0.5">Cómo ahorra horas cada semana y tiene un setter de ventas con IA funcionando 24/7.</p></div>
           </li>
-          <li class="flex items-start gap-3 text-white/60">
-            <svg class="w-5 h-5 text-gold mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10" stroke-width="1.5"/></svg>
-            IA aplicada a redes sociales: crear contenido 10x más rápido
+          <li class="flex gap-3">
+            <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+            <div><span class="font-semibold">Caso Eric Ponce</span><p class="text-sm text-gray-500 mt-0.5">RRSS 100% automatizadas: contenido, publicación y gestión sin intervención manual.</p></div>
           </li>
-          <li class="flex items-start gap-3 text-white/60">
-            <svg class="w-5 h-5 text-gold mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10" stroke-width="1.5"/></svg>
-            Automatización de lanzamientos y procesos de venta
+          <li class="flex gap-3">
+            <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+            <div><span class="font-semibold">De 6 meses a 4 semanas</span><p class="text-sm text-gray-500 mt-0.5">Cómo montamos este lanzamiento en 4 semanas cuando antes habría llevado 6 meses.</p></div>
+          </li>
+          <li class="flex gap-3">
+            <svg class="w-5 h-5 text-accent mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+            <div><span class="font-semibold">Tu plan de acción</span><p class="text-sm text-gray-500 mt-0.5">Saldrás con un plan concreto para implementar IA en tu negocio desde el día siguiente.</p></div>
           </li>
         </ul>
       </div>
@@ -176,222 +185,249 @@ tailwind.config = {
 </section>
 
 <!-- Para quién es -->
-<section class="py-24 md:py-32 bg-surface-2">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="mb-16">
-      <p class="text-gold text-sm font-mono tracking-widest uppercase mb-4">¿Es para ti?</p>
-      <h2 class="font-display text-4xl md:text-6xl">Para quién es<br><span class="gradient-text">este taller</span></h2>
-    </div>
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="border border-white/5 rounded-lg p-6 hover:border-gold/20 transition-colors">
-        <svg class="w-8 h-8 text-gold mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-        <h3 class="font-semibold text-lg mb-2">Usas ChatGPT… y poco más</h3>
-        <p class="text-white/50 text-sm leading-relaxed">Sabes que la IA puede hacer mucho más por tu negocio, pero no sabes por dónde empezar.</p>
+<section class="py-20 md:py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <p class="text-accent font-bold text-sm tracking-wide uppercase mb-4">Para quién es</p>
+    <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-12">¿Es para ti?</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-gray-200 rounded-2xl p-8">
+        <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Empresarios y CEOs</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Diriges un negocio y sabes que la IA es importante, pero no tienes tiempo para filtrar qué funciona y qué es humo. Quieres ir al grano.</p>
       </div>
-      <div class="border border-white/5 rounded-lg p-6 hover:border-gold/20 transition-colors">
-        <svg class="w-8 h-8 text-gold mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-        <h3 class="font-semibold text-lg mb-2">No tienes tiempo para experimentar</h3>
-        <p class="text-white/50 text-sm leading-relaxed">Quieres ir directo a lo que funciona, sin prueba y error, sin cursos de 40 horas.</p>
+      <div class="border border-gray-200 rounded-2xl p-8">
+        <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Emprendedores digitales</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Tienes un negocio online y quieres escalar sin contratar más gente. La IA puede ser tu equipo invisible.</p>
       </div>
-      <div class="border border-white/5 rounded-lg p-6 hover:border-gold/20 transition-colors">
-        <svg class="w-8 h-8 text-gold mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5"/></svg>
-        <h3 class="font-semibold text-lg mb-2">Quieres automatizar tu negocio</h3>
-        <p class="text-white/50 text-sm leading-relaxed">Tareas repetitivas, contenido, ventas… todo lo que la IA puede hacer por ti mientras tú te enfocas en crecer.</p>
+      <div class="border border-gray-200 rounded-2xl p-8">
+        <div class="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Freelancers y consultores</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Ofreces servicios y quieres multiplicar tu productividad. Con IA puedes hacer el trabajo de un equipo de 5 personas.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Quién lo imparte -->
-<section class="py-24 md:py-32">
-  <div class="max-w-5xl mx-auto px-6">
-    <div class="mb-16">
-      <p class="text-gold text-sm font-mono tracking-widest uppercase mb-4">El equipo</p>
-      <h2 class="font-display text-4xl md:text-6xl">Quién lo<br><span class="gradient-text">imparte</span></h2>
-    </div>
-    <div class="grid sm:grid-cols-2 gap-6">
-      <div class="bg-surface-2 border border-white/5 rounded-lg p-8 hover:border-gold/20 transition-colors">
-        <div class="w-14 h-14 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center mb-5">
-          <span class="font-display text-2xl text-gold">E</span>
+<section class="py-20 md:py-28 px-6 bg-gray-50">
+  <div class="max-w-5xl mx-auto">
+    <p class="text-accent font-bold text-sm tracking-wide uppercase mb-4">Quién lo imparte</p>
+    <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-12">Tus formadores</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10">
+        <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
-        <h3 class="font-semibold text-xl mb-1">Eric Ponce</h3>
-        <p class="text-gold text-sm mb-3">YouTuber (64K subs) · Podcaster BLV con José Elías (157K subs)</p>
-        <p class="text-white/50 text-sm leading-relaxed">Empresario y divulgador de IA aplicada al negocio. Lleva años integrando inteligencia artificial en sus empresas y proyectos.</p>
+        <h3 class="text-2xl font-extrabold mb-1">Eric Ponce</h3>
+        <p class="text-accent font-semibold text-sm mb-4">Empresario &amp; creador de contenido</p>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">Canal de YouTube con más de 64.000 suscriptores. Co-host del podcast BLV junto a José Elías, con más de 157.000 suscriptores. Lleva años aplicando IA en sus negocios y creando contenido sobre tecnología y emprendimiento.</p>
+        <p class="text-gray-600 text-sm leading-relaxed">Ha automatizado completamente la gestión de sus redes sociales con IA y es un referente en la comunidad empresarial española en el uso práctico de inteligencia artificial.</p>
       </div>
-      <div class="bg-surface-2 border border-white/5 rounded-lg p-8 hover:border-gold/20 transition-colors">
-        <div class="w-14 h-14 rounded-full bg-gold/10 border border-gold/20 flex items-center justify-center mb-5">
-          <span class="font-display text-2xl text-gold">M</span>
+      <div class="bg-white rounded-2xl border border-gray-200 p-8 md:p-10">
+        <div class="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center mb-6">
+          <svg class="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
-        <h3 class="font-semibold text-xl mb-1">Magí Pons</h3>
-        <p class="text-gold text-sm mb-3">Membership & Recurring Revenue Expert · Co-Founder Funnel Cracks</p>
-        <p class="text-white/50 text-sm leading-relaxed">Experto en modelos de negocio recurrentes y automatización de funnels de venta con IA.</p>
+        <h3 class="text-2xl font-extrabold mb-1">Magí Pons</h3>
+        <p class="text-accent font-semibold text-sm mb-4">Membership &amp; Recurring Revenue Expert</p>
+        <p class="text-gray-600 text-sm leading-relaxed mb-4">Co-Founder de Funnel Cracks. Experto en modelos de negocio recurrentes, membresías y funnels de venta. Lleva años ayudando a empresarios a construir negocios predecibles y escalables.</p>
+        <p class="text-gray-600 text-sm leading-relaxed">Ahora aplica IA para acelerar cada fase del negocio: desde la captación hasta la retención. Sabe exactamente qué automatizar y qué no para maximizar resultados.</p>
       </div>
     </div>
-    <p class="mt-6 text-white/30 text-sm">+ Héctor y Eric G. completan el equipo de formadores.</p>
+  </div>
+</section>
+
+<!-- Casos de uso -->
+<section class="py-20 md:py-28 px-6">
+  <div class="max-w-5xl mx-auto">
+    <p class="text-accent font-bold text-sm tracking-wide uppercase mb-4">Casos de uso reales</p>
+    <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-6">Esto es lo que verás en acción</h2>
+    <p class="text-lg text-gray-600 max-w-2xl mb-12">No demos bonitas. Casos reales de empresarios reales que ya están usando IA para generar resultados.</p>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="border border-gray-200 rounded-2xl p-8 hover:border-accent/30 transition">
+        <div class="w-12 h-12 bg-accent-light rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Automatización de RRSS</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Cómo generar, programar y publicar contenido en todas tus redes sin tocar un botón. El sistema que usa Eric Ponce a diario.</p>
+      </div>
+      <div class="border border-gray-200 rounded-2xl p-8 hover:border-accent/30 transition">
+        <div class="w-12 h-12 bg-accent-light rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Asistente personal IA</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Un asistente que gestiona tu email, agenda y tareas. Como tener un empleado 24/7 que no necesita vacaciones.</p>
+      </div>
+      <div class="border border-gray-200 rounded-2xl p-8 hover:border-accent/30 transition">
+        <div class="w-12 h-12 bg-accent-light rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        </div>
+        <h3 class="text-lg font-bold mb-2">Setter de ventas IA</h3>
+        <p class="text-gray-600 text-sm leading-relaxed">Un agente de IA que cualifica leads, responde preguntas y agenda llamadas de venta. El caso de José Elías en detalle.</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- Fecha y formato -->
-<section class="py-24 md:py-32 bg-surface-2">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <p class="text-gold text-sm font-mono tracking-widest uppercase mb-4">Formato</p>
-    <h2 class="font-display text-4xl md:text-6xl mb-12">Dos días.<br><span class="gradient-text">Online. Gratis.</span></h2>
-    <div class="grid sm:grid-cols-3 gap-6 max-w-2xl mx-auto">
-      <div class="border border-white/5 rounded-lg p-6">
-        <svg class="w-7 h-7 text-gold mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        <p class="font-semibold">14 — 15 abril</p>
-        <p class="text-white/40 text-sm">Martes y miércoles</p>
+<section class="py-20 md:py-28 px-6 bg-gray-50">
+  <div class="max-w-3xl mx-auto text-center">
+    <p class="text-accent font-bold text-sm tracking-wide uppercase mb-4">Fecha y formato</p>
+    <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-8">2 días que pueden cambiar tu negocio</h2>
+    <div class="grid sm:grid-cols-3 gap-6 mb-10">
+      <div class="bg-white rounded-2xl border border-gray-200 p-6">
+        <svg class="w-8 h-8 text-accent mx-auto mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        <p class="font-bold">14 y 15 de abril</p>
+        <p class="text-sm text-gray-500">Martes y miércoles, 2026</p>
       </div>
-      <div class="border border-white/5 rounded-lg p-6">
-        <svg class="w-7 h-7 text-gold mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-        <p class="font-semibold">Webinar en directo</p>
-        <p class="text-white/40 text-sm">Online desde casa</p>
+      <div class="bg-white rounded-2xl border border-gray-200 p-6">
+        <svg class="w-8 h-8 text-accent mx-auto mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <p class="font-bold">10:00 — 12:30 CET</p>
+        <p class="text-sm text-gray-500">Horario peninsular</p>
       </div>
-      <div class="border border-white/5 rounded-lg p-6">
-        <svg class="w-7 h-7 text-gold mx-auto mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/></svg>
-        <p class="font-semibold">100% gratuito</p>
-        <p class="text-white/40 text-sm">Sin compromiso</p>
+      <div class="bg-white rounded-2xl border border-gray-200 p-6">
+        <svg class="w-8 h-8 text-accent mx-auto mb-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 10l5 5-5 5"/><path d="M4 4v7a4 4 0 0 0 4 4h12"/></svg>
+        <p class="font-bold">Webinar en directo</p>
+        <p class="text-sm text-gray-500">100% online, desde casa</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Formulario de registro -->
-<section id="registro" class="py-24 md:py-32">
-  <div class="max-w-xl mx-auto px-6">
-    <div class="text-center mb-12">
-      <p class="text-gold text-sm font-mono tracking-widest uppercase mb-4">Registro</p>
-      <h2 class="font-display text-4xl md:text-5xl mb-4">Reserva tu plaza<br><span class="gradient-text">gratis</span></h2>
-      <p class="text-white/50">Plazas limitadas. Regístrate y recibe el acceso al webinar.</p>
+<!-- Registro -->
+<section class="py-20 md:py-28 px-6" id="registro">
+  <div class="max-w-xl mx-auto">
+    <div class="text-center mb-10">
+      <p class="text-accent font-bold text-sm tracking-wide uppercase mb-4">Registro gratuito</p>
+      <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-4">Reserva tu plaza</h2>
+      <p class="text-gray-600">Plazas limitadas. Regístrate y recibe el acceso en tu email.</p>
     </div>
-    <form id="registro-form" class="bg-surface-2 border border-white/5 rounded-lg p-8 glow" onsubmit="handleSubmit(event)">
-      <div class="space-y-5">
-        <div>
-          <label for="nombre" class="block text-sm text-white/60 mb-2">Nombre *</label>
-          <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre"
-            class="w-full bg-surface border border-white/10 rounded px-4 py-3 text-white placeholder:text-white/20 transition-colors focus:border-gold/40">
-        </div>
-        <div>
-          <label for="email" class="block text-sm text-white/60 mb-2">Email *</label>
-          <input type="email" id="email" name="email" required placeholder="tu@email.com"
-            class="w-full bg-surface border border-white/10 rounded px-4 py-3 text-white placeholder:text-white/20 transition-colors focus:border-gold/40">
-        </div>
-        <div>
-          <label for="telefono" class="block text-sm text-white/60 mb-2">Teléfono <span class="text-white/20">(opcional)</span></label>
-          <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000"
-            class="w-full bg-surface border border-white/10 rounded px-4 py-3 text-white placeholder:text-white/20 transition-colors focus:border-gold/40">
-        </div>
+    <form id="registration-form" class="space-y-4">
+      <div>
+        <label class="block text-sm font-semibold mb-1.5" for="name">Nombre completo *</label>
+        <input type="text" id="name" required placeholder="Tu nombre" class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition">
       </div>
-      <button type="submit" class="w-full mt-8 px-8 py-4 bg-gold text-surface font-bold text-lg rounded hover:bg-gold-light transition-all cursor-pointer hover:scale-[1.01] active:scale-[0.99]">
-        Reserva tu plaza gratis
-      </button>
-      <p class="mt-4 text-center text-white/20 text-xs">Sin spam. Solo info del taller. Puedes darte de baja cuando quieras.</p>
+      <div>
+        <label class="block text-sm font-semibold mb-1.5" for="email">Email *</label>
+        <input type="email" id="email" required placeholder="tu@email.com" class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition">
+      </div>
+      <div>
+        <label class="block text-sm font-semibold mb-1.5" for="phone">Teléfono <span class="text-gray-400 font-normal">(opcional)</span></label>
+        <input type="tel" id="phone" placeholder="+34 600 000 000" class="w-full border border-gray-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition">
+      </div>
+      <button type="submit" class="cursor-pointer w-full bg-accent text-white font-bold text-lg py-4 rounded-xl hover:bg-accent-dark transition shadow-lg shadow-accent/20">Reserva tu plaza gratis</button>
+      <p class="text-xs text-gray-400 text-center">Sin spam. Solo información del taller.</p>
     </form>
-    <div id="registro-ok" class="hidden text-center py-16">
-      <svg class="w-16 h-16 text-gold mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      <h3 class="font-display text-3xl mb-2">¡Plaza reservada!</h3>
-      <p class="text-white/50">Revisa tu email. Te enviaremos los datos de acceso antes del 14 de abril.</p>
+    <!-- Success -->
+    <div id="registration-success" class="hidden text-center py-12">
+      <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-5">
+        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+      </div>
+      <h3 class="text-2xl font-extrabold mb-2">¡Plaza reservada!</h3>
+      <p class="text-gray-600">Revisa tu email. Te enviaremos toda la información antes del taller.</p>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="py-24 md:py-32 bg-surface-2">
-  <div class="max-w-3xl mx-auto px-6">
-    <div class="mb-16">
-      <p class="text-gold text-sm font-mono tracking-widest uppercase mb-4">FAQ</p>
-      <h2 class="font-display text-4xl md:text-5xl">Preguntas<br><span class="gradient-text">frecuentes</span></h2>
-    </div>
-    <div class="space-y-3" id="faq-list">
-      <div class="faq-item border border-white/5 rounded-lg cursor-pointer" onclick="toggleFaq(this)">
-        <div class="flex items-center justify-between p-5">
-          <span class="font-semibold">¿Es realmente gratis?</span>
-          <svg class="faq-chevron w-5 h-5 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+<section class="py-20 md:py-28 px-6 bg-gray-50" id="faq">
+  <div class="max-w-3xl mx-auto">
+    <p class="text-accent font-bold text-sm tracking-wide uppercase mb-4">Preguntas frecuentes</p>
+    <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-12">Resolvemos tus dudas</h2>
+    <div class="space-y-3">
+      <div class="faq-item bg-white border border-gray-200 rounded-xl cursor-pointer" onclick="this.classList.toggle('open')">
+        <div class="flex items-center justify-between p-6">
+          <span class="font-semibold pr-4">¿De verdad es gratis? ¿Cuál es el truco?</span>
+          <svg class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
         </div>
-        <div class="faq-answer px-5"><p class="pb-5 text-white/50">Sí, 100% gratuito y sin compromiso. El taller de 2 días es un regalo para que veas el potencial de la IA en tu negocio.</p></div>
+        <div class="faq-content"><p class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">Sí, es 100% gratis. No hay truco. Nuestro objetivo es que conozcas el poder de la IA aplicada a negocios. Si después quieres profundizar, tendremos opciones — pero el taller en sí es completamente gratuito y con contenido real.</p></div>
       </div>
-      <div class="faq-item border border-white/5 rounded-lg cursor-pointer" onclick="toggleFaq(this)">
-        <div class="flex items-center justify-between p-5">
-          <span class="font-semibold">¿Necesito saber de tecnología?</span>
-          <svg class="faq-chevron w-5 h-5 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      <div class="faq-item bg-white border border-gray-200 rounded-xl cursor-pointer" onclick="this.classList.toggle('open')">
+        <div class="flex items-center justify-between p-6">
+          <span class="font-semibold pr-4">¿Necesito conocimientos técnicos previos?</span>
+          <svg class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
         </div>
-        <div class="faq-answer px-5"><p class="pb-5 text-white/50">No. Está pensado para empresarios, no técnicos. Si usas un móvil y un ordenador, es suficiente.</p></div>
+        <div class="faq-content"><p class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">No. Este taller está diseñado para empresarios, no para ingenieros. Si sabes usar un ordenador y tienes un negocio, es para ti. Explicamos todo desde cero y de forma práctica.</p></div>
       </div>
-      <div class="faq-item border border-white/5 rounded-lg cursor-pointer" onclick="toggleFaq(this)">
-        <div class="flex items-center justify-between p-5">
-          <span class="font-semibold">¿Se graba? ¿Puedo verlo después?</span>
-          <svg class="faq-chevron w-5 h-5 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      <div class="faq-item bg-white border border-gray-200 rounded-xl cursor-pointer" onclick="this.classList.toggle('open')">
+        <div class="flex items-center justify-between p-6">
+          <span class="font-semibold pr-4">¿Se graba? ¿Puedo verlo después?</span>
+          <svg class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
         </div>
-        <div class="faq-answer px-5"><p class="pb-5 text-white/50">La experiencia está diseñada para verla en directo. Regístrate y bloquea las fechas en tu calendario.</p></div>
+        <div class="faq-content"><p class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">El taller es en directo y recomendamos asistir en vivo para aprovechar al máximo la interacción. Pero sí, los registrados tendrán acceso a la grabación durante un tiempo limitado.</p></div>
       </div>
-      <div class="faq-item border border-white/5 rounded-lg cursor-pointer" onclick="toggleFaq(this)">
-        <div class="flex items-center justify-between p-5">
-          <span class="font-semibold">¿Cuántas plazas hay?</span>
-          <svg class="faq-chevron w-5 h-5 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      <div class="faq-item bg-white border border-gray-200 rounded-xl cursor-pointer" onclick="this.classList.toggle('open')">
+        <div class="flex items-center justify-between p-6">
+          <span class="font-semibold pr-4">¿Qué diferencia hay con otros cursos de IA?</span>
+          <svg class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
         </div>
-        <div class="faq-answer px-5"><p class="pb-5 text-white/50">Las plazas son limitadas para mantener la calidad del directo. Una vez se llenen, cerramos el registro.</p></div>
+        <div class="faq-content"><p class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">La mayoría de cursos los dan profesores o teóricos. Este lo imparten dos empresarios que usan IA cada día en sus negocios. Todo lo que verás son casos reales, herramientas probadas y estrategias aplicables desde el minuto uno.</p></div>
       </div>
-      <div class="faq-item border border-white/5 rounded-lg cursor-pointer" onclick="toggleFaq(this)">
-        <div class="flex items-center justify-between p-5">
-          <span class="font-semibold">¿Qué pasa después del taller?</span>
-          <svg class="faq-chevron w-5 h-5 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+      <div class="faq-item bg-white border border-gray-200 rounded-xl cursor-pointer" onclick="this.classList.toggle('open')">
+        <div class="flex items-center justify-between p-6">
+          <span class="font-semibold pr-4">¿A qué hora es y cuánto dura?</span>
+          <svg class="faq-icon w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>
         </div>
-        <div class="faq-answer px-5"><p class="pb-5 text-white/50">Si quieres profundizar, ofreceremos una formación avanzada de IA para empresarios (10 sesiones semanales). Pero el taller gratuito tiene valor completo por sí solo.</p></div>
+        <div class="faq-content"><p class="px-6 pb-6 text-gray-600 text-sm leading-relaxed">El taller es los días 14 y 15 de abril de 2026, de 10:00 a 12:30 (hora peninsular española, CET). Son dos sesiones de 2 horas y media cada una.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA final -->
-<section class="py-24 md:py-32 relative">
-  <div class="absolute inset-0 overflow-hidden">
-    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-gold/[0.03] rounded-full blur-3xl"></div>
-  </div>
-  <div class="relative max-w-3xl mx-auto px-6 text-center">
-    <h2 class="font-display text-4xl md:text-6xl mb-6">No te quedes<br><span class="gradient-text">mirando</span></h2>
-    <p class="text-white/50 text-lg mb-10 max-w-xl mx-auto">La IA no va a esperar a que estés listo. Los empresarios que se adapten primero, ganarán. 14 y 15 de abril. Gratis. Online.</p>
-    <a href="#registro" class="group inline-flex items-center gap-3 px-8 py-4 bg-gold text-surface font-bold text-lg rounded hover:bg-gold-light transition-all cursor-pointer hover:scale-[1.02] active:scale-[0.98]">
+<!-- CTA Final -->
+<section class="py-20 md:py-28 px-6">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl md:text-5xl font-black tracking-tight mb-6">¿Vas a seguir haciendo todo manual?</h2>
+    <p class="text-lg text-gray-600 mb-10 max-w-xl mx-auto">14 y 15 de abril. Gratis. Online. Sin excusas. Reserva tu plaza y empieza a usar IA de verdad en tu negocio.</p>
+    <a href="#registro" class="cursor-pointer inline-flex items-center gap-2 bg-accent text-white font-bold text-lg px-8 py-4 rounded-xl hover:bg-accent-dark transition shadow-lg shadow-accent/20">
       Reserva tu plaza gratis
-      <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="py-8 border-t border-white/5">
-  <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <span class="font-display text-gold">Taller IA para Empresarios</span>
-    <span class="text-white/20 text-sm">© 2026. Todos los derechos reservados.</span>
+<footer class="py-10 px-6 border-t border-gray-100">
+  <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-400">
+    <span>Taller IA para Empresarios — 14 y 15 abril 2026</span>
+    <span>Eric Ponce &amp; Magí Pons</span>
   </div>
 </footer>
 
 <script>
-// Countdown to April 14, 2026 10:00 CET
-const target = new Date('2026-04-14T10:00:00+02:00').getTime();
+// Countdown to April 14, 2026 10:00 CET (UTC+1 = 09:00 UTC)
+const target = new Date('2026-04-14T09:00:00Z').getTime();
 function updateCountdown() {
   const now = Date.now();
-  const diff = Math.max(0, target - now);
+  const diff = target - now;
+  if (diff <= 0) {
+    document.getElementById('countdown').innerHTML = '<p class="text-2xl font-bold text-accent">¡El taller ha comenzado!</p>';
+    return;
+  }
   const d = Math.floor(diff / 86400000);
   const h = Math.floor((diff % 86400000) / 3600000);
   const m = Math.floor((diff % 3600000) / 60000);
   const s = Math.floor((diff % 60000) / 1000);
-  document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
-  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
-  document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
-  document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+  document.getElementById('cd-days').textContent = String(d).padStart(2, '0');
+  document.getElementById('cd-hours').textContent = String(h).padStart(2, '0');
+  document.getElementById('cd-mins').textContent = String(m).padStart(2, '0');
+  document.getElementById('cd-secs').textContent = String(s).padStart(2, '0');
 }
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// FAQ
-function toggleFaq(el) { el.classList.toggle('open'); }
-
 // Form
-function handleSubmit(e) {
+document.getElementById('registration-form').addEventListener('submit', function(e) {
   e.preventDefault();
-  document.getElementById('registro-form').classList.add('hidden');
-  document.getElementById('registro-ok').classList.remove('hidden');
-}
+  this.classList.add('hidden');
+  document.getElementById('registration-success').classList.remove('hidden');
+});
 </script>
 </body>
 </html>
